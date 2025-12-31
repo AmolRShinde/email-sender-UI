@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/email-sender/static/css/main.455227c6.css",
+    "main.js": "/email-sender/static/js/main.91aedd19.js",
+    "index.html": "/email-sender/index.html",
+    "main.455227c6.css.map": "/email-sender/static/css/main.455227c6.css.map",
+    "main.91aedd19.js.map": "/email-sender/static/js/main.91aedd19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.455227c6.css",
+    "static/js/main.91aedd19.js"
+  ]
+}
