@@ -1,7 +1,7 @@
 {
   "name": "email-sender",
   "version": "1.0.0",
-  "homepage": "https://AmolRShinde.github.io/email-sender",
+  "homepage": "https://amolrshinde.github.io/email-sender-UI",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
