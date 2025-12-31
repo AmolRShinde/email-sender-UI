@@ -1,0 +1,37 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.sidebar .active {
+  background: #2563eb;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.progress {
+  background: #eee;
+  margin: 10px 0;
+}
+
+.progress div {
+  background: green;
+  color: white;
+  text-align: center;
+}
