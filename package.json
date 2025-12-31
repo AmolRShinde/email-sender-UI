@@ -1,6 +1,7 @@
 {
   "name": "email-sender",
   "version": "1.0.0",
+  "homepage": "https://AmolRShinde.github.io/email-sender",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -16,7 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
