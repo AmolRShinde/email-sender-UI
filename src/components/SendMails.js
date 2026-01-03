@@ -27,6 +27,7 @@ export default function SendMails() {
   const [previewRows, setPreviewRows] = useState([]);
   const hasFailedRows = rows.some(r => r.status === "FAILED");
   const [paused, setPaused] = useState(false);
+  const [jobCompleted, setJobCompleted] = useState(false);
 
   // refs
   const esRef = useRef(null);
@@ -142,6 +143,7 @@ export default function SendMails() {
         setProgress(100);
         setSending(false);
         setMessage("Job completed.");
+        setJobCompleted(true);
         try { es.close(); } catch {}
         esRef.current = null;
       });
@@ -242,6 +244,19 @@ export default function SendMails() {
     setPreviewRows(res.data);
   };
 
+  const downloadExcel = (jobId) => {
+    if (!jobId) return;
+
+    const url = `${API_BASE_URL}/api/email/download/${jobId}`;
+
+    // force browser download
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `email-report-${jobId}.xlsx`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
 
 
   return (
@@ -265,6 +280,17 @@ export default function SendMails() {
 
             <Button color="inherit" startIcon={<DownloadIcon />} onClick={downloadCsv} disabled={!jobId}>
               Download CSV
+            </Button>
+            <Button
+              onClick={() => downloadExcel(jobId)}
+              disabled={!jobCompleted}
+              style={{
+                  marginTop: "16px",
+                  padding: "10px 16px",
+                  cursor: jobCompleted ? "pointer" : "not-allowed"
+              }}
+            >
+              ⬇ Download Updated Excel
             </Button>
             <Button
               variant="contained"
