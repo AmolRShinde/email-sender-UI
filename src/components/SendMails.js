@@ -172,9 +172,11 @@ export default function SendMails() {
       setMessage("Connected — receiving live updates.");
     } catch (err) {
       console.error("Upload failed", err);
-      setMessage(err.response?.data || err.message || "Upload failed.");
-      setSending(false);
-      setJobId(null);
+      setMessage(
+        err.response?.data?.message ||
+        err.response?.data?.error ||
+        "Upload failed (server error)"
+      );
     }
   };
 
