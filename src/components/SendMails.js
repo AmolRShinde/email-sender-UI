@@ -284,13 +284,9 @@ export default function SendMails() {
             <Button
               onClick={() => downloadExcel(jobId)}
               disabled={!jobCompleted}
-              style={{
-                  marginTop: "16px",
-                  padding: "10px 16px",
-                  cursor: jobCompleted ? "pointer" : "not-allowed"
-              }}
+              color="inherit"
             >
-              ⬇ Download Updated Excel
+              Download Updated Excel
             </Button>
             <Button
               variant="contained"
