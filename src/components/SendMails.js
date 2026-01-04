@@ -247,7 +247,7 @@ export default function SendMails() {
   const downloadExcel = (jobId) => {
     if (!jobId) return;
 
-    const url = `${API_BASE_URL}/api/email/download/${jobId}`;
+    const url = `${BASE_URL}/api/email/download/${jobId}`;
 
     // force browser download
     const a = document.createElement("a");
@@ -282,6 +282,7 @@ export default function SendMails() {
               Download CSV
             </Button>
             <Button
+              startIcon={<DownloadIcon />}
               onClick={() => downloadExcel(jobId)}
               disabled={!jobCompleted}
               color="inherit"
